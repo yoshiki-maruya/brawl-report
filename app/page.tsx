@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import useSWR from "swr";
+import { Brawlers } from "@/entities/brawlers";
 
 export default function Home() {
   const fetcher = async (url: string) => {
@@ -21,7 +22,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {data.items.map(item => (
+      {data.items.map((item: Brawlers) => (
         <div key={item.id}>{item.name}</div>
       ))}
     </main>
