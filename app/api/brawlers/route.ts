@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   try {
+    console.log(process.env.BRAWL_API_KEY);
     const response = await fetch('https://api.brawlstars.com/v1/brawlers', {
       method: "GET",
       headers: {
@@ -9,6 +10,7 @@ export async function GET() {
         "Authorization": `Bearer ${process.env.BRAWL_API_KEY}`,
       },
     });
+    console.log(response);
 
     // レスポンスが成功かどうかを確認
     if (!response.ok) {
