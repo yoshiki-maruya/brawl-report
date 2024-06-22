@@ -10,7 +10,6 @@ export async function GET() {
         "Authorization": `Bearer ${process.env.BRAWL_API_KEY}`,
       },
     });
-    console.log(response);
 
     // レスポンスが成功かどうかを確認
     if (!response.ok) {
